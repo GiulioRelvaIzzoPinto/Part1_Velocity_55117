@@ -12,8 +12,8 @@ public class Drive : MonoBehaviour
 
     void Update()
     {
-        float translation = Input.GetAxis("Vertical") * speed;
-        float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+        float translation = Input.GetAxis("Vertical") * rotationSpeed;
+        float rotation = Input.GetAxis("Horizontal") * speed;
 
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
@@ -22,11 +22,11 @@ public class Drive : MonoBehaviour
 
         if (Input.GetKey(KeyCode.T))
         {
-            transGun.RotateAround(transGun.position, transGun.right, -2);
+            transGun.RotateAround(transGun.position, transGun.right, -2f);
         }
         else if (Input.GetKey(KeyCode.G))
         {
-            transGun.RotateAround(transGun.position, transGun.right, 2);
+            transGun.RotateAround(transGun.position, transGun.right, 2f);
         }
         else if (Input.GetKeyDown(KeyCode.B))
         {

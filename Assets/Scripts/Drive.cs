@@ -7,6 +7,8 @@ public class Drive : MonoBehaviour
     public float speed = 10.0f;
     public float rotationSpeed = 100.0f;
     public Transform transGun;
+    public Transform gun;
+    public GameObject bulletObj;
 
     void Update()
     {
@@ -33,6 +35,10 @@ public class Drive : MonoBehaviour
         else if (Input.GetKey(KeyCode.G))
         {
             transGun.RotateAround(transGun.position, transGun.right, 2);
+        }
+        else if (Input.GetKeyDown(KeyCode.B))
+        {
+            Instantiate(bulletObj, gun.position, gun.rotation);
         }
     }
 }
